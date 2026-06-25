@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  churn-pipeline:
+    build: .
+    container_name: churn-mlops-pipeline
+    volumes:
+      - ./mlruns:/app/mlruns
+      - ./models:/app/models
+      - ./data:/app/data
+    command: sh -c "python src/preprocess.py && python src/train.py"
+
+  mlflow-ui:
+    build: .
+    container_name: churn-mlflow-ui
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mlruns:/app/mlruns
+    command: mlflow ui --host 0.0.0.0 --port 5000

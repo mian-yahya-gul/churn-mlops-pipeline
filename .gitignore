@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+mlruns/
+mlflow.db
+data/processed/
+models/*.pkl
+models/*.png
+models/*.csv
+.env
+*.egg-info/
+.DS_Store
