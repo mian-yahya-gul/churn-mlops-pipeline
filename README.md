@@ -1,6 +1,6 @@
-# Customer Churn Prediction — MLOps Pipeline
+# Customer Churn Prediction  MLOps Pipeline
 
-An end-to-end machine learning pipeline for predicting customer churn, built to demonstrate production MLOps practices: experiment tracking, model registry, containerization, automated testing, and CI/CD — not just a model training script.
+An end to end machine learning pipeline for predicting customer churn, built to demonstrate production MLOps practices: experiment tracking, model registry, containerization, automated testing, and CI/CD  not just a model training script.
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![MLflow](https://img.shields.io/badge/MLflow-2.14-0194E2)
@@ -9,14 +9,14 @@ An end-to-end machine learning pipeline for predicting customer churn, built to 
 
 ## Problem
 
-Subscription-based businesses lose revenue when customers churn. This pipeline trains a classifier to flag at-risk customers using account and usage data (tenure, contract type, billing, support interactions), so retention teams can act before a customer leaves.
+Subscriptionmbased businesses lose revenue when customers churn. This pipeline trains a classifier to flag at risk customers using account and usage data (tenure, contract type, billing, support interactions), so retention teams can act before a customer leaves.
 
 ## What this project demonstrates
 
-This isn't just "train a model" — it's the full lifecycle a production ML system needs:
+This is a full lifecycle a production ML system needs:
 
-- **Reproducible preprocessing** — deterministic train/test splits, persisted label encoders so inference matches training exactly
-- **Experiment tracking with MLflow** — every run logs parameters, metrics, and artifacts; multiple hyperparameter configurations are compared side-by-side in the MLflow UI
+- **Reproducible preprocessing**  deterministic train/test splits, persisted label encoders so inference matches training exactly
+- **Experiment tracking with MLflow** — every run logs parameters, metrics, and artifacts; multiple hyperparameter configurations are compared side by side in the MLflow UI
 - **Model registry** — trained models are versioned and registered (`churn-rf-classifier`), so inference always pulls a specific, traceable version
 - **Automated testing** — unit tests validate data integrity and preprocessing correctness, run automatically in CI
 - **Containerization** — the full pipeline (and an MLflow UI) runs via Docker Compose, no local environment setup needed
@@ -52,7 +52,7 @@ Best run (150 estimators, max_depth=10):
 | F1 Score | 0.78 |
 | ROC-AUC | 0.86 |
 
-Top predictive features: `contract_type`, `total_charges`, `monthly_charges`, `tenure_months` — consistent with churn literature (month-to-month customers churn far more than annual-contract customers).
+Top predictive features: `contract_type`, `total_charges`, `monthly_charges`, `tenure_months` — consistent with churn literature (month to month customers churn far more than annual contract customers).
 
 ## Running it
 
@@ -112,9 +112,6 @@ mlflow ui   # compare all runs side-by-side
 └── requirements.txt
 ```
 
-## Notes on the dataset
-
-The dataset is synthetically generated (`data/customer_churn.csv`) with deliberate, realistic signal (e.g., month-to-month contracts and lack of tech support increase churn probability) rather than random noise — built this way so the pipeline and feature importance results are meaningfully interpretable, while keeping the project self-contained and reproducible without external data dependencies.
 
 ## Author
 
