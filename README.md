@@ -15,12 +15,12 @@ Subscriptionmbased businesses lose revenue when customers churn. This pipeline t
 
 This is a full lifecycle a production ML system needs:
 
-- **Reproducible preprocessing**  deterministic train/test splits, persisted label encoders so inference matches training exactly
-- **Experiment tracking with MLflow** — every run logs parameters, metrics, and artifacts; multiple hyperparameter configurations are compared side by side in the MLflow UI
-- **Model registry** — trained models are versioned and registered (`churn-rf-classifier`), so inference always pulls a specific, traceable version
-- **Automated testing** — unit tests validate data integrity and preprocessing correctness, run automatically in CI
-- **Containerization** — the full pipeline (and an MLflow UI) runs via Docker Compose, no local environment setup needed
-- **CI/CD** — GitHub Actions runs tests, a training smoke test, and a Docker build on every push
+- **Reproducible preprocessing** : deterministic train/test splits, persisted label encoders so inference matches training exactly
+- **Experiment tracking with MLflow** : every run logs parameters, metrics, and artifacts; multiple hyperparameter configurations are compared side by side in the MLflow UI
+- **Model registry** : trained models are versioned and registered (`churn-rf-classifier`), so inference always pulls a specific, traceable version
+- **Automated testing** : unit tests validate data integrity and preprocessing correctness, run automatically in CI
+- **Containerization** : the full pipeline (and an MLflow UI) runs via Docker Compose, no local environment setup needed
+- **CI/CD** : GitHub Actions runs tests, a training smoke test, and a Docker build on every push
 
 ## Architecture
 
@@ -56,7 +56,7 @@ Top predictive features: `contract_type`, `total_charges`, `monthly_charges`, `t
 
 ## Running it
 
-### Option 1 — Docker Compose (recommended)
+### Option 1  Docker Compose (recommended)
 
 ```bash
 docker-compose up --build
@@ -64,7 +64,7 @@ docker-compose up --build
 
 This runs the full pipeline and starts the MLflow UI at `http://localhost:5000`.
 
-### Option 2 — Local
+### Option 2  Local
 
 ```bash
 pip install -r requirements.txt
