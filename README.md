@@ -52,7 +52,7 @@ Best run (150 estimators, max_depth=10):
 | F1 Score | 0.78 |
 | ROC-AUC | 0.86 |
 
-Top predictive features: `contract_type`, `total_charges`, `monthly_charges`, `tenure_months` — consistent with churn literature (month to month customers churn far more than annual contract customers).
+Top predictive features: `contract_type`, `total_charges`, `monthly_charges`, `tenure_months`  consistent with churn literature (month to month customers churn far more than annual contract customers).
 
 ## Running it
 
